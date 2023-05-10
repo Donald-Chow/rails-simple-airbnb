@@ -1,0 +1,19 @@
+.navbar {
+  justify-content: space-between;
+  background: white;
+  top:0px;
+  position: sticky;
+}
+
+.navbar .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-brand img {
+  width: 40px;
+  height: 40px;
+  max-height:40px;
+  object-fit: cover;
+  object-position: top;
+  transform: scale(1.5);
+}

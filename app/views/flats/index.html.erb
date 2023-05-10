@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>ALL OUR FLATS!! (<%= @flats.count %>)</h1>
+  <div class="cards">
+    <% @flats.each do |flat| %>
+      <div class="card-trip">
+        <img src= <%= "http://source.unsplash.com/featured/?houses>&#{rand(1000)}" %> />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= flat.name %></h2>
+            <p><%= flat.description %></p>
+            <p>Sleeps: <%= flat.number_of_guests %></p>
+          </div>
+          <h2 class="card-trip-pricing">£<%= flat.price_per_night %></h2>
+        </div>
+        <div class="card-trip-links py-3">
+          <%= link_to "More info", flat_path(flat), class: "m-3" %>
+          <%= link_to "Edit", edit_flat_path(flat), class: "m-3" %>
+          <%= link_to "Delete", flat_path(flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},class: "m-3" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

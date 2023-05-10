@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+ @import "components/_navbar";
+ @import "components/_avatar";
+ @import "components/_cards";
+ @import "components/_banner";
+ @import "components/_search_form";
+
+ body {
+  background: rgb(236, 236, 236);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(95, 95, 233);
+}

@@ -1,0 +1,41 @@
+<div class="navbar navbar-expand-sm navbar-light">
+  <div class="container-fluid">
+    <%= link_to flats_path , class: "navbar-brand" do %>
+      <%= image_tag "https://cdn4.vectorstock.com/i/1000x1000/28/68/happy-home-fun-comedy-laugh-house-logo-house-logo-vector-35602868.jpg" %>
+    <% end %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <%# if user_signed_in? %>
+        <li class="nav-item">
+          <%= simple_form_for :search, url: flats_path, method: :get do |f| %>
+            <div class="search-form-control form-group">
+              <input class="form-control string required" type="text" name="query" id="search_flat_name" />
+              <button name="button" type="submit" class="btn btn-flat">
+                <i class="fas fa-search"></i> Search
+              </button>
+            </div>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Add Flat", new_flat_path, class: "nav-link" %>
+        </li>
+        <!--<li class="nav-item dropdown">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </li> -->
+        <%# else %>
+        <!--li class="nav-item"-->
+        <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+        <!--/li-->
+        <%# end %>
+      </ul>
+    </div>
+  </div>
+</div>
